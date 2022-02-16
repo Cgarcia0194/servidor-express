@@ -18,40 +18,34 @@ hbs.registerPartials(__dirname + '/views/partials', error => console.log(error))
 // }));
 app.use(express.static('public'));
 
+/**
+ * Estas rutas son para la aplicación del dash básico por eso se comentan
+ */
 //controlador
-app.get('/', function (req, res) {
-    res.render('home', {
-        nombre: 'Carlos García',
-        titulo: 'Curso Node'
-    });
-});
+// app.get('/', function (req, res) {
+//     res.render('home', {
+//         nombre: 'Carlos García',
+//         titulo: 'Curso Node'
+//     });
+// });
 
-app.get('/generic', function (req, res) {
-    res.render('generic', {
-        nombre: 'Carlos García',
-        titulo: 'Curso Node'
-    });
-});
+// app.get('/generic', function (req, res) {
+//     res.render('generic', {
+//         nombre: 'Carlos García',
+//         titulo: 'Curso Node'
+//     });
+// });
 
-app.get('/elements', function (req, res) {
-    res.render('elements', {
-        nombre: 'Carlos García',
-        titulo: 'Curso Node'
-    });
-});
+// app.get('/elements', function (req, res) {
+//     res.render('elements', {
+//         nombre: 'Carlos García',
+//         titulo: 'Curso Node'
+//     });
+// });
 
-
-
-app.get('/hola-mundo', function (req, res) {
-    res.send('hola mundo con su ruta')
-});
 
 app.get('*', function (req, res) {
-    // res.sendFile(__dirname + '/public/404.html');
-    res.render('404', {
-        nombre: 'Carlos García',
-        titulo: 'Curso Node'
-    });
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 app.listen(port, () => {
